@@ -6,6 +6,12 @@ export default class Counter extends Component {
     console.log("Counter constructor");
   }
 
+  componentDidUpdate(preProps, preState) {
+    console.log("preProps", preProps.counter.value);
+    console.log("thisProps", this.props.counter.value);
+    console.log("preState", preState);
+  }
+
   componentDidMount() {
     //ajax call
     // this.setState()
