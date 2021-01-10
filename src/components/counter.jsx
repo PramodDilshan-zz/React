@@ -1,7 +1,18 @@
 import React, { Component } from "react";
 
 export default class Counter extends Component {
+  constructor() {
+    super();
+    console.log("Counter constructor");
+  }
+
+  componentDidMount() {
+    //ajax call
+    // this.setState()
+    console.log("Counter didMount");
+  }
   render() {
+    console.log("Counter render");
     return (
       <div>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>

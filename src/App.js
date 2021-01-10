@@ -14,7 +14,19 @@ export default class App extends Component {
     ],
   };
 
+  constructor(){
+    super();
+    console.log("App constructor")
+  }
+
+  componentDidMount(){
+    //ajax call
+    // this.setState()
+    console.log("App didMount")
+  }
+
   render(){
+    console.log("App render")
     return (
       <React.Fragment>
         <Navbar totalCounters={this.state.counters.filter(c => c.value > 0).length}/>
