@@ -6,19 +6,26 @@ export default class counter extends Component {
     tags: [],
   };
 
+  //   constructor() {
+  //     super();
+  //     this.handleClick = this.handleClick.bind(this);
+  //   }
+
   render() {
     return (
       <div>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
-        <button onClick={this.handleClick} className="btn btn-secondary btn-sm">Increament</button>
+        <button onClick={this.handleClick} className="btn btn-secondary btn-sm">
+          Increament
+        </button>
       </div>
     );
   }
 
-  handleClick(){
-    //   console.log(this)
-      console.log("clicked");
-  }
+  handleClick = () => {
+    console.log(this);
+    console.log("clicked");
+  };
 
   renderTags() {
     return this.state.tags.length === 0 ? (
