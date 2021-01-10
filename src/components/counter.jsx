@@ -9,14 +9,18 @@ export default class counter extends Component {
     return (
       <div>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
-        <button onClick={this.handleClick} className="btn btn-secondary btn-sm">
+        <button
+          onClick={() => this.handleClick({ id: 1 })}
+          className="btn btn-secondary btn-sm"
+        >
           Increament
         </button>
       </div>
     );
   }
 
-  handleClick = () => {
+  handleClick = (ele) => {
+    console.log(ele);
     this.setState({ count: this.state.count + 1 });
   };
 
