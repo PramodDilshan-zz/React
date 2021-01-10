@@ -16,7 +16,7 @@ export default class Counters extends Component {
         {this.state.counters.map((counter) => (
           <Counter
             key={counter.id}
-            value={counter.value}
+            counter={counter}
             onDelete={this.handleDelete}
           />
         ))}
@@ -24,7 +24,8 @@ export default class Counters extends Component {
     );
   }
 
-  handleDelete() {
-    console.log("raise and handle event");
-  }
+  handleDelete = (id) => {
+    const conuters = this.state.counters.filter((c) => c.id !== id);
+    this.setState({ counters: conuters });
+  };
 }
