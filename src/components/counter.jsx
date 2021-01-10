@@ -5,12 +5,6 @@ export default class counter extends Component {
     count: 0,
     tags: [],
   };
-
-  //   constructor() {
-  //     super();
-  //     this.handleClick = this.handleClick.bind(this);
-  //   }
-
   render() {
     return (
       <div>
@@ -23,21 +17,8 @@ export default class counter extends Component {
   }
 
   handleClick = () => {
-    console.log(this);
-    console.log("clicked");
+    this.setState({ count: this.state.count + 1 });
   };
-
-  renderTags() {
-    return this.state.tags.length === 0 ? (
-      <p>No Tags</p>
-    ) : (
-      <ul>
-        {this.state.tags.map((tag) => (
-          <li key={tag}>{tag}</li>
-        ))}
-      </ul>
-    );
-  }
 
   getBadgeClasses() {
     let classes = "badge m-2 badge-";
