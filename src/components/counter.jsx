@@ -1,26 +1,23 @@
 import React, { Component } from "react";
 
-export default class counter extends Component {
+export default class Counter extends Component {
   state = {
-    count: 0,
-    tags: [],
+    count: this.props.value,
   };
+
   render() {
+    console.log(this.props);
     return (
       <div>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
-        <button
-          onClick={() => this.handleClick({ id: 1 })}
-          className="btn btn-secondary btn-sm"
-        >
+        <button onClick={this.handleClick} className="btn btn-secondary btn-sm">
           Increament
         </button>
       </div>
     );
   }
 
-  handleClick = (ele) => {
-    console.log(ele);
+  handleClick = () => {
     this.setState({ count: this.state.count + 1 });
   };
 
