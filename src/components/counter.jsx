@@ -10,11 +10,14 @@ export default class counter extends Component {
     return (
       <div>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
-        <button className="btn btn-secondary btn-sm">Increament</button>
-        {this.state.tags.length === 0 && "Create new tag"}
-        {this.renderTags()}
+        <button onClick={this.handleClick} className="btn btn-secondary btn-sm">Increament</button>
       </div>
     );
+  }
+
+  handleClick(){
+    //   console.log(this)
+      console.log("clicked");
   }
 
   renderTags() {
