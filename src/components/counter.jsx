@@ -6,6 +6,10 @@ export default class Counter extends Component {
     console.log("Counter constructor");
   }
 
+  componentWillUnmount() {
+    console.log("counter unmount");
+  }
+
   componentDidUpdate(preProps, preState) {
     console.log("preProps", preProps.counter.value);
     console.log("thisProps", this.props.counter.value);
